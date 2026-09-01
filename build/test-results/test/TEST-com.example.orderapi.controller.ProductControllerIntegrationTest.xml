@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.orderapi.controller.ProductControllerIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-01T03:49:38" hostname="WIN-A98D4LGAFV4" time="0.093">
+  <properties/>
+  <testcase name="listProducts_returnsSeededProducts()" classname="com.example.orderapi.controller.ProductControllerIntegrationTest" time="0.093"/>
+  <system-out><![CDATA[2026-09-01T12:49:38.748+09:00  INFO 2436 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.orderapi.controller.ProductControllerIntegrationTest]: ProductControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-09-01T12:49:38.751+09:00  INFO 2436 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.orderapi.OrderApiApplication for test class com.example.orderapi.controller.ProductControllerIntegrationTest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

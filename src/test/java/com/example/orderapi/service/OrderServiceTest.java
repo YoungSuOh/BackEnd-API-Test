@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
+import com.example.orderapi.domain.Order;
+import com.example.orderapi.domain.OrderStatus;
 import com.example.orderapi.domain.Product;
 import com.example.orderapi.dto.OrderCreateRequest;
 import com.example.orderapi.dto.OrderItemRequest;
@@ -19,6 +21,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 @ExtendWith(MockitoExtension.class)
 class OrderServiceTest {
@@ -56,7 +62,7 @@ class OrderServiceTest {
 
     @Test
     void pay_onlyAllowedFromCreatedStatus() {
-        var order = new com.example.orderapi.domain.Order("paul");
+        var order = new Order("paul");
         order.setId(1L);
         when(orderRepository.findById(1L)).thenReturn(Optional.of(order));
 
@@ -64,5 +70,53 @@ class OrderServiceTest {
 
         assertThatThrownBy(() -> orderService.pay(1L))
                 .isInstanceOf(BusinessException.class);
+    }
+
+    @Test
+    void getOrder_throwsNotFoundWhenMissing() {
+        when(orderRepository.findById(1L)).thenReturn(Optional.empty());
+
+        assertThatThrownBy(() -> orderService.getOrder(1L))
+                .isInstanceOf(BusinessException.class);
+    }
+
+    @Test
+    void pay_throwsNotFoundWhenMissing() {
+        when(orderRepository.findById(1L)).thenReturn(Optional.empty());
+
+        assertThatThrownBy(() -> orderService.pay(1L))
+                .isInstanceOf(BusinessException.class);
+    }
+
+    @Test
+    void createOrder_throwsNotFoundWhenProductMissing() {
+        when(productRepository.findById(1L)).thenReturn(Optional.empty());
+
+        assertThatThrownBy(() -> orderService.createOrder(
+                new OrderCreateRequest("paul", List.of(new OrderItemRequest(1L, 1)))))
+                .isInstanceOf(BusinessException.class);
+    }
+
+    @Test
+    void listOrders_delegatesToStatusQueryWhenStatusGiven() {
+        Order order = new Order("paul");
+        Pageable pageable = PageRequest.of(0, 10);
+        Page<Order> page = new PageImpl<>(List.of(order));
+        when(orderRepository.findByStatus(OrderStatus.CREATED, pageable)).thenReturn(page);
+
+        Page<OrderResponse> result = orderService.listOrders(OrderStatus.CREATED, pageable);
+
+        assertThat(result.getContent()).hasSize(1);
+    }
+
+    @Test
+    void listOrders_usesFindAllWhenStatusIsNull() {
+        Pageable pageable = PageRequest.of(0, 10);
+        Page<Order> page = new PageImpl<>(List.of(new Order("paul")));
+        when(orderRepository.findAll(pageable)).thenReturn(page);
+
+        Page<OrderResponse> result = orderService.listOrders(null, pageable);
+
+        assertThat(result.getContent()).hasSize(1);
     }
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.orderapi.domain.ProductTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-01T03:49:38" hostname="WIN-A98D4LGAFV4" time="0.001">
+  <properties/>
+  <testcase name="decreaseStock_reducesStockWhenEnough()" classname="com.example.orderapi.domain.ProductTest" time="0.001"/>
+  <testcase name="decreaseStock_rejectsWhenInsufficient()" classname="com.example.orderapi.domain.ProductTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
