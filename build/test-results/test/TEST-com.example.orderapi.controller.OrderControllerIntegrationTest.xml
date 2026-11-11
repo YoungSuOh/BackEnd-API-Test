@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.orderapi.controller.OrderControllerIntegrationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-09-03T05:24:25.058Z" hostname="WIN-A98D4LGAFV4" time="8.14">
+  <properties/>
+  <testcase name="getOrder_returnsNotFoundWithKoreanMessage()" classname="com.example.orderapi.controller.OrderControllerIntegrationTest" time="0.28"/>
+  <testcase name="createOrder_returnsCreatedWithTotalAmount()" classname="com.example.orderapi.controller.OrderControllerIntegrationTest" time="0.291"/>
+  <testcase name="payOrder_thenPayAgainReturnsConflict()" classname="com.example.orderapi.controller.OrderControllerIntegrationTest" time="0.049"/>
+  <testcase name="createOrder_returnsConflictWithKoreanMessageWhenStockInsufficient()" classname="com.example.orderapi.controller.OrderControllerIntegrationTest" time="0.007"/>
+  <testcase name="createOrder_returnsBadRequestWhenCustomerNameBlank()" classname="com.example.orderapi.controller.OrderControllerIntegrationTest" time="0.021"/>
+  <system-out><![CDATA[14:24:25.562 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.orderapi.controller.OrderControllerIntegrationTest]: OrderControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:24:25.934 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.orderapi.OrderApiApplication for test class com.example.orderapi.controller.OrderControllerIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-09-03T14:24:27.217+09:00  INFO 16276 --- [    Test worker] c.e.o.c.OrderControllerIntegrationTest   : Starting OrderControllerIntegrationTest using Java 17.0.12 with PID 16276 (started by paul9 in C:\BackEnd-API-Test)
+2026-09-03T14:24:27.220+09:00  INFO 16276 --- [    Test worker] c.e.o.c.OrderControllerIntegrationTest   : No active profile set, falling back to 1 default profile: "default"
+2026-09-03T14:24:28.462+09:00  INFO 16276 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-03T14:24:28.569+09:00  INFO 16276 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 2 JPA repository interfaces.
+2026-09-03T14:24:29.130+09:00  INFO 16276 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-03T14:24:29.200+09:00  INFO 16276 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-09-03T14:24:29.236+09:00  INFO 16276 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-03T14:24:29.398+09:00  INFO 16276 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-03T14:24:29.443+09:00  INFO 16276 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-03T14:24:29.727+09:00  INFO 16276 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:order_db user=SA
+2026-09-03T14:24:29.729+09:00  INFO 16276 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-03T14:24:30.751+09:00  INFO 16276 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-03T14:24:30.814+09:00  INFO 16276 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-03T14:24:31.107+09:00  INFO 16276 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-03T14:24:32.494+09:00  INFO 16276 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-09-03T14:24:32.494+09:00  INFO 16276 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-09-03T14:24:32.496+09:00  INFO 16276 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-09-03T14:24:32.526+09:00  INFO 16276 --- [    Test worker] c.e.o.c.OrderControllerIntegrationTest   : Started OrderControllerIntegrationTest in 6.083 seconds (process running for 11.25)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

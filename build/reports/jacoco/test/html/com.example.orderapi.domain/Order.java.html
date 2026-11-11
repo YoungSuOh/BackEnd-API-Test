@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Order.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">order-api</a> &gt; <a href="index.source.html" class="el_package">com.example.orderapi.domain</a> &gt; <span class="el_source">Order.java</span></div><h1>Order.java</h1><pre class="source lang-java linenums">package com.example.orderapi.domain;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import com.example.orderapi.exception.BusinessException;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String customerName;
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
+
+    private Long totalAmount;
+
+    private LocalDateTime createdAt;
+
+<span class="fc" id="L38">    @OneToMany(mappedBy = &quot;order&quot;, cascade = CascadeType.ALL, orphanRemoval = true)</span>
+    private List&lt;OrderItem&gt; items = new ArrayList&lt;&gt;();
+
+<span class="fc" id="L41">    public Order(String customerName) {</span>
+<span class="fc" id="L42">        this.customerName = customerName;</span>
+<span class="fc" id="L43">        this.status = OrderStatus.CREATED;</span>
+<span class="fc" id="L44">        this.createdAt = LocalDateTime.now();</span>
+<span class="fc" id="L45">        this.totalAmount = 0L;</span>
+<span class="fc" id="L46">    }</span>
+
+    // 二쇰Ц �빆紐� 異붽� + 珥앹븸 �늻�쟻
+    public void addItem(OrderItem item) {
+<span class="fc" id="L50">        items.add(item);</span>
+<span class="fc" id="L51">        item.setOrder(this);</span>
+<span class="fc" id="L52">        totalAmount += item.getLineAmount();</span>
+<span class="fc" id="L53">    }</span>
+
+    // CREATED �긽�깭�뿉�꽌留� 寃곗젣 媛��뒫
+    public void pay() {
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (this.status != OrderStatus.CREATED) {</span>
+<span class="fc" id="L58">            throw BusinessException.conflict(&quot;�깮�꽦(CREATED) �긽�깭�쓽 二쇰Ц留� 寃곗젣�븷 �닔 �엳�뒿�땲�떎. �쁽�옱 �긽�깭=&quot; + status);</span>
+        }
+<span class="fc" id="L60">        this.status = OrderStatus.PAID;</span>
+<span class="fc" id="L61">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
