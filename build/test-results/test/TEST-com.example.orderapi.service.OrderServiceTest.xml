@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.orderapi.service.OrderServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-09-02T05:50:59.282Z" hostname="WIN-A98D4LGAFV4" time="0.649">
+<testsuite name="com.example.orderapi.service.OrderServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-09-03T05:24:22.721Z" hostname="WIN-A98D4LGAFV4" time="2.303">
   <properties/>
-  <testcase name="createOrder_computesSnapshotPriceAndDecreasesStock()" classname="com.example.orderapi.service.OrderServiceTest" time="0.593"/>
-  <testcase name="listOrders_usesFindAllWhenStatusIsNull()" classname="com.example.orderapi.service.OrderServiceTest" time="0.016"/>
-  <testcase name="createOrder_throwsNotFoundWhenProductMissing()" classname="com.example.orderapi.service.OrderServiceTest" time="0.01"/>
-  <testcase name="pay_onlyAllowedFromCreatedStatus()" classname="com.example.orderapi.service.OrderServiceTest" time="0.005"/>
-  <testcase name="createOrder_rejectsWhenStockInsufficient()" classname="com.example.orderapi.service.OrderServiceTest" time="0.003"/>
-  <testcase name="getOrder_throwsNotFoundWhenMissing()" classname="com.example.orderapi.service.OrderServiceTest" time="0.004"/>
-  <testcase name="pay_throwsNotFoundWhenMissing()" classname="com.example.orderapi.service.OrderServiceTest" time="0.004"/>
-  <testcase name="listOrders_delegatesToStatusQueryWhenStatusGiven()" classname="com.example.orderapi.service.OrderServiceTest" time="0.002"/>
+  <testcase name="createOrder_computesSnapshotPriceAndDecreasesStock()" classname="com.example.orderapi.service.OrderServiceTest" time="2.136"/>
+  <testcase name="listOrders_usesFindAllWhenStatusIsNull()" classname="com.example.orderapi.service.OrderServiceTest" time="0.043"/>
+  <testcase name="createOrder_throwsNotFoundWhenProductMissing()" classname="com.example.orderapi.service.OrderServiceTest" time="0.025"/>
+  <testcase name="pay_onlyAllowedFromCreatedStatus()" classname="com.example.orderapi.service.OrderServiceTest" time="0.009"/>
+  <testcase name="createOrder_rejectsWhenStockInsufficient()" classname="com.example.orderapi.service.OrderServiceTest" time="0.006"/>
+  <testcase name="getOrder_throwsNotFoundWhenMissing()" classname="com.example.orderapi.service.OrderServiceTest" time="0.014"/>
+  <testcase name="pay_throwsNotFoundWhenMissing()" classname="com.example.orderapi.service.OrderServiceTest" time="0.006"/>
+  <testcase name="listOrders_delegatesToStatusQueryWhenStatusGiven()" classname="com.example.orderapi.service.OrderServiceTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.orderapi.domain.OrderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-02T05:50:59.191Z" hostname="WIN-A98D4LGAFV4" time="0.075">
+<testsuite name="com.example.orderapi.domain.OrderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-03T05:24:33.236Z" hostname="WIN-A98D4LGAFV4" time="0.005">
   <properties/>
-  <testcase name="addItem_accumulatesTotalAmount()" classname="com.example.orderapi.domain.OrderTest" time="0.068"/>
-  <testcase name="pay_rejectsWhenNotCreated()" classname="com.example.orderapi.domain.OrderTest" time="0.005"/>
-  <testcase name="pay_transitionsFromCreatedToPaid()" classname="com.example.orderapi.domain.OrderTest" time="0.001"/>
+  <testcase name="addItem_accumulatesTotalAmount()" classname="com.example.orderapi.domain.OrderTest" time="0.001"/>
+  <testcase name="pay_rejectsWhenNotCreated()" classname="com.example.orderapi.domain.OrderTest" time="0.003"/>
+  <testcase name="pay_transitionsFromCreatedToPaid()" classname="com.example.orderapi.domain.OrderTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

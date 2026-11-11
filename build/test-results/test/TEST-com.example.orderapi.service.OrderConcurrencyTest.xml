@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.orderapi.service.OrderConcurrencyTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-03T05:24:33.251Z" hostname="WIN-A98D4LGAFV4" time="0.683">
+  <properties/>
+  <testcase name="pay_onlyOneSucceedsUnderConcurrentRequests()" classname="com.example.orderapi.service.OrderConcurrencyTest" time="0.05"/>
+  <testcase name="createOrder_stockNeverGoesNegativeUnderConcurrentRequests()" classname="com.example.orderapi.service.OrderConcurrencyTest" time="0.06"/>
+  <system-out><![CDATA[2026-09-03T14:24:33.252+09:00  INFO 16276 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.orderapi.service.OrderConcurrencyTest]: OrderConcurrencyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-09-03T14:24:33.259+09:00  INFO 16276 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.orderapi.OrderApiApplication for test class com.example.orderapi.service.OrderConcurrencyTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.4)
+
+2026-09-03T14:24:33.283+09:00  INFO 16276 --- [    Test worker] c.e.o.service.OrderConcurrencyTest       : Starting OrderConcurrencyTest using Java 17.0.12 with PID 16276 (started by paul9 in C:\BackEnd-API-Test)
+2026-09-03T14:24:33.283+09:00  INFO 16276 --- [    Test worker] c.e.o.service.OrderConcurrencyTest       : No active profile set, falling back to 1 default profile: "default"
+2026-09-03T14:24:33.418+09:00  INFO 16276 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-03T14:24:33.428+09:00  INFO 16276 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 2 JPA repository interfaces.
+2026-09-03T14:24:33.512+09:00  INFO 16276 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-03T14:24:33.516+09:00  INFO 16276 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-03T14:24:33.535+09:00  INFO 16276 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-03T14:24:33.536+09:00  INFO 16276 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-09-03T14:24:33.538+09:00  INFO 16276 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:order_db user=SA
+2026-09-03T14:24:33.538+09:00  INFO 16276 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-09-03T14:24:33.640+09:00  INFO 16276 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-03T14:24:33.651+09:00  INFO 16276 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-03T14:24:33.820+09:00  INFO 16276 --- [    Test worker] c.e.o.service.OrderConcurrencyTest       : Started OrderConcurrencyTest in 0.557 seconds (process running for 12.544)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

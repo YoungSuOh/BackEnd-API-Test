@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.orderapi.controller.ProductControllerIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-02T05:50:59.067Z" hostname="WIN-A98D4LGAFV4" time="0.124">
+<testsuite name="com.example.orderapi.controller.ProductControllerIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-09-03T05:24:33.200Z" hostname="WIN-A98D4LGAFV4" time="0.034">
   <properties/>
-  <testcase name="listProducts_returnsSeededProducts()" classname="com.example.orderapi.controller.ProductControllerIntegrationTest" time="0.117"/>
-  <system-out><![CDATA[2026-09-02T14:50:59.068+09:00  INFO 21896 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.orderapi.controller.ProductControllerIntegrationTest]: ProductControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-09-02T14:50:59.071+09:00  INFO 21896 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.orderapi.OrderApiApplication for test class com.example.orderapi.controller.ProductControllerIntegrationTest
+  <testcase name="listProducts_returnsSeededProducts()" classname="com.example.orderapi.controller.ProductControllerIntegrationTest" time="0.025"/>
+  <system-out><![CDATA[2026-09-03T14:24:33.202+09:00  INFO 16276 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.orderapi.controller.ProductControllerIntegrationTest]: ProductControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-09-03T14:24:33.206+09:00  INFO 16276 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.orderapi.OrderApiApplication for test class com.example.orderapi.controller.ProductControllerIntegrationTest
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
